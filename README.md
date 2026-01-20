@@ -54,7 +54,7 @@ This project is a combination of a modern, interactive calculator web applicatio
 ## Screenshots
 
 ### Calculator Interface
-![Calculator Screenshot](assets/calcula.png)  
+![Calculator Screenshot](assets/calculator.png)  
 *A sleek calculator with gradient background and intuitive buttons.*
 
 ### Portfolio Homepage
