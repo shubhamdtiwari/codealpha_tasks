@@ -38,6 +38,7 @@ body {
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 60px;
   gap: 10px;
 }
 
@@ -74,7 +75,7 @@ body {
 .equal {
   background: #27ae60;
   color: white;
-  grid-column: span 2;
+  grid-row: span 2;
 }
 
 .equal:hover {
