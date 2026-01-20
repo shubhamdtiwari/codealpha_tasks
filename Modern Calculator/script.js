@@ -1,3 +1,4 @@
+"use strict";
 const result = document.getElementById("result");
 let currentInput = "";
 let operator = "";
