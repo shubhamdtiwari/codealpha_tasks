@@ -25,7 +25,7 @@ This project is a combination of a modern, interactive calculator web applicatio
 - **HTML5**: Structure of the web pages.
 - **CSS3**: Styling, including gradients, shadows, and animations for a modern look.
 - **JavaScript**: Functionality for the calculator (event handling, calculations).
-- **GitHub Pages** (optional): For hosting the portfolio.
+- **GitHub Pages**: For hosting the portfolio.
 
 ## Installation and Setup
 
