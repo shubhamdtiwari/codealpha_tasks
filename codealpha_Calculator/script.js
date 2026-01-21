@@ -8,15 +8,18 @@ document.querySelectorAll(".btn").forEach((button) => {
   button.addEventListener("click", () => {
     const value = button.textContent;
 
+    //for clearing all values
     if (value === "C") {
       currentInput = "";
       operator = "";
       previousInput = "";
       result.value = "";
     } else if (value === "⌫") {
+      // for clearing one value
       currentInput = currentInput.slice(0, -1);
       result.value = currentInput;
     } else if (["+", "-", "*", "/"].includes(value)) {
+      //for given operator
       if (currentInput) {
         if (previousInput && operator) {
           calculate();
@@ -36,7 +39,7 @@ document.querySelectorAll(".btn").forEach((button) => {
     }
   });
 });
-
+// function for calculation
 function calculate() {
   const prev = parseFloat(previousInput);
   const curr = parseFloat(currentInput);
