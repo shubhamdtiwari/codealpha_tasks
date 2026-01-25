@@ -12,10 +12,11 @@ const dropdown = document.getElementById("project-dropdown");
 const details = document.getElementById("project-details");
 
 const projectData = {
-  project1: {
-    title: "Modern Calculator",
-    description: "It is a fully functional basic calculator",
-  },
+    calculator: {
+        title: 'Modern Calculator',
+        description: 'A sleek, responsive calculator app built with HTML, CSS, and JavaScript.'
+    }
+};
 };
 
 dropdown.addEventListener("change", (e) => {
