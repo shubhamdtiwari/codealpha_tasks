@@ -13,22 +13,8 @@ const details = document.getElementById("project-details");
 
 const projectData = {
   project1: {
-    title: "E-commerce Site",
-    description:
-      "A fully responsive e-commerce platform built with React and Node.js. Features include user authentication, payment integration, and product management.",
-    link: "https://example.com/project1",
-  },
-  project2: {
-    title: "Blog Platform",
-    description:
-      "A custom blog CMS using PHP and MySQL. Includes user roles, commenting system, and SEO optimization.",
-    link: "https://example.com/project2",
-  },
-  project3: {
-    title: "Mobile App",
-    description:
-      "A cross-platform mobile app developed with Flutter. Available on iOS and Android, with real-time data syncing.",
-    link: "https://example.com/project3",
+    title: "Modern Calculator",
+    description: "It is a fully functional basic calculator",
   },
 };
 
