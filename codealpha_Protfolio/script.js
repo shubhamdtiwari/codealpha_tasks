@@ -33,8 +33,8 @@ dropdown.addEventListener("change", (e) => {
   }
 });
 // Parallax effect for welcome section
-window.addEventListener("scroll", () => {
-  const welcome = document.getElementById("welcome");
-  const scrolled = window.pageYOffset;
-  welcome.style.transform = `translateY(${scrolled * 0.5}px)`;
-});
+// window.addEventListener("scroll", () => {
+//   const welcome = document.getElementById("welcome");
+//   const scrolled = window.pageYOffset;
+//   welcome.style.transform = `translateY(${scrolled * 0.5}px)`;
+// });
