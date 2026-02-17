@@ -2,37 +2,69 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Music Player</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Link CSS -->
+    <title>Ultimate Music Player</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="player">
-      <img src="" id="cover" />
-      <h2 id="title">Song Title</h2>
-      <h4 id="artist">Artist Name</h4>
+    <div class="app">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <h2>My Playlist</h2>
 
-      <div class="progress-container" id="progress-container">
-        <div class="progress" id="progress"></div>
+        <input type="file" id="fileInput" accept="audio/*" multiple />
+
+        <ul id="playlist"></ul>
       </div>
 
-      <div class="time">
-        <span id="current-time">0:00</span>
-        <span id="duration">0:00</span>
-      </div>
+      <!-- Main Player -->
+      <div class="main">
+        <div class="cover-wrapper">
+          <div class="vinyl"></div>
+          <img id="cover" />
+        </div>
 
-      <div class="controls">
-        <button id="prev">⏮</button>
-        <button id="play">▶</button>
-        <button id="next">⏭</button>
+        <h2 id="title"></h2>
+        <p id="artist"></p>
+
+        <div class="equalizer">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="progress-container" id="progress-container">
+          <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="time">
+          <span id="current-time">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="controls">
+          <button id="shuffle">🔀</button>
+          <button id="prev">⏮</button>
+          <button id="play" class="play-btn">▶</button>
+          <button id="next">⏭</button>
+          <button id="repeat">🔁</button>
+          <button id="like">🤍</button>
+        </div>
+
+        <div class="volume">
+          🔊
+          <input
+            type="range"
+            id="volume"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+          />
+        </div>
       </div>
     </div>
 
     <audio id="audio"></audio>
 
-    <!-- Link JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>
