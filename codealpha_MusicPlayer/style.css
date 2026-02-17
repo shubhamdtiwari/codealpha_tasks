@@ -1,37 +1,106 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: #0d0d0d;
   color: white;
+  overflow: hidden;
 }
 
-.player {
-  width: 320px;
-  background: rgba(0, 0, 0, 0.6);
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #111;
   padding: 20px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-right: 1px solid #222;
+  overflow-y: auto;
 }
 
-.player img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+.sidebar h2 {
+  margin-top: 0;
+}
+
+#fileInput {
+  width: 100%;
   margin-bottom: 15px;
-  animation: rotate 10s linear infinite;
-  animation-play-state: paused;
+  padding: 8px;
+  background: #1a1a1a;
+  color: #aaa;
+  border: 1px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.player img.playing {
-  animation-play-state: running;
+#fileInput:hover {
+  border-color: #00f2ff;
 }
 
-@keyframes rotate {
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar li:hover {
+  background: #222;
+}
+
+.sidebar li.active {
+  background: linear-gradient(90deg, #00f2ff, #0072ff);
+}
+
+/* Main */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 1s ease;
+}
+
+/* Vinyl */
+.cover-wrapper {
+  position: relative;
+}
+
+.cover-wrapper img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.vinyl {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #000 40%, #111 60%);
+  border-radius: 50%;
+  top: -20px;
+  left: -20px;
+  z-index: 1;
+  animation: spin 8s linear infinite;
+  opacity: 0;
+}
+
+.playing .vinyl {
+  opacity: 1;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
@@ -40,46 +109,98 @@ body {
   }
 }
 
-h2,
-h4 {
-  margin: 5px 0;
+/* Equalizer */
+.equalizer {
+  display: flex;
+  gap: 5px;
+  margin: 15px 0;
+  height: 20px;
 }
 
-.controls {
-  margin-top: 15px;
+.equalizer span {
+  width: 4px;
+  background: #00f2ff;
+  animation: bounce 1s infinite ease-in-out;
 }
 
-button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 22px;
-  margin: 10px;
-  cursor: pointer;
+.equalizer span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.equalizer span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.equalizer span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.equalizer span:nth-child(5) {
+  animation-delay: 0.8s;
 }
 
-button:hover {
-  color: #00ffcc;
+@keyframes bounce {
+  0%,
+  100% {
+    height: 5px;
+  }
+  50% {
+    height: 20px;
+  }
 }
 
+/* Progress */
 .progress-container {
-  background: #444;
+  width: 60%;
+  height: 6px;
+  background: #333;
   border-radius: 10px;
   cursor: pointer;
-  margin: 15px 0;
-  height: 8px;
-  width: 100%;
 }
 
 .progress {
-  background: #00ffcc;
   height: 100%;
   width: 0%;
+  background: linear-gradient(90deg, #00f2ff, #0072ff);
   border-radius: 10px;
 }
 
 .time {
+  width: 60%;
   display: flex;
   justify-content: space-between;
   font-size: 12px;
+  margin: 8px 0 15px;
+  color: #aaa;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  color: #00f2ff;
+}
+
+.play-btn {
+  background: linear-gradient(135deg, #00f2ff, #0072ff);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.volume {
+  margin-top: 15px;
+  width: 60%;
+  display: flex;
+  gap: 10px;
 }
